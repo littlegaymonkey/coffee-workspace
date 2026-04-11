@@ -1,0 +1,39 @@
+   175.8ms (setup:858): 2026-03-25 18:15:58
+   175.9ms (setup:859): /usr/bin/pipx install check50
+   175.9ms (setup:860): pipx version is 1.4.3
+   175.9ms (setup:861): Default python interpreter is '/usr/bin/python3'
+   178.3ms (package_name_from_spec:370): Determined package name: check50
+   178.3ms (package_name_from_spec:371): Package name determined in 0.0s
+   179.0ms (run_subprocess:168): running /usr/bin/python3 -m venv --without-pip /home/dmin/.local/share/pipx/venvs/check50
+   235.3ms (run_subprocess:190): stdout:
+   235.3ms (run_subprocess:192): stderr:
+   235.4ms (run_subprocess:193): returncode: 0
+   236.6ms (run_subprocess:168): running <checking pip's availability>
+   260.2ms (run_subprocess:190): stdout: ModuleSpec(name='pip', loader=<_frozen_importlib_external.SourceFileLoader object at 0x75889dbff260>, origin='/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip/__init__.py', submodule_search_locations=['/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip'])
+   260.2ms (run_subprocess:193): returncode: 0
+   261.5ms (run_subprocess:168): running /home/dmin/.local/share/pipx/venvs/check50/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+   277.6ms (run_subprocess:190): stdout: /home/dmin/.local/share/pipx/venvs/check50/lib/python3.12/site-packages
+   277.6ms (run_subprocess:193): returncode: 0
+   277.8ms (run_subprocess:168): running /home/dmin/.local/share/pipx/shared/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+   294.5ms (run_subprocess:190): stdout: /home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages
+   294.6ms (run_subprocess:193): returncode: 0
+   295.5ms (run_subprocess:168): running /home/dmin/.local/share/pipx/venvs/check50/bin/python --version
+   296.9ms (run_subprocess:190): stdout: Python 3.12.3
+   296.9ms (run_subprocess:192): stderr:
+   297.0ms (run_subprocess:193): returncode: 0
+   297.1ms (_parsed_package_to_package_or_url:137): cleaned package spec: check50
+   297.5ms (run_subprocess:168): running /home/dmin/.local/share/pipx/venvs/check50/bin/python -m pip --no-input install check50
+ 11295.2ms (run_subprocess:193): returncode: 0
+ 11295.5ms (run_subprocess:168): running <fetch_info_in_venv commands>
+ 11316.2ms (run_subprocess:190): stdout: {"sys_path": ["/usr/lib/python312.zip", "/usr/lib/python3.12", "/usr/lib/python3.12/lib-dynload", "/home/dmin/.local/share/pipx/venvs/check50/lib/python3.12/site-packages", "/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages"], "python_version": "3.12.3", "environment": {"implementation_name": "cpython", "implementation_version": "3.12.3", "os_name": "posix", "platform_machine": "x86_64", "platform_release": "6.6.87.2-microsoft-standard-WSL2", "platform_system": "Linux", "platform_version": "#1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025", "python_full_version": "3.12.3", "platform_python_implementation": "CPython", "python_version": "3.12", "sys_platform": "linux"}}
+ 11316.3ms (run_subprocess:193): returncode: 0
+ 11422.0ms (get_venv_metadata_for_package:339): get_venv_metadata_for_package: 127ms
+ 11422.1ms (_parsed_package_to_package_or_url:137): cleaned package spec: check50
+ 11478.4ms (run_subprocess:168): running <checking pip's availability>
+ 11493.3ms (run_subprocess:190): stdout: ModuleSpec(name='pip', loader=<_frozen_importlib_external.SourceFileLoader object at 0x79c8e27ff260>, origin='/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip/__init__.py', submodule_search_locations=['/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip'])
+ 11493.4ms (run_subprocess:193): returncode: 0
+ 11493.5ms (needs_upgrade:78): Time since last upgrade of shared libs, in seconds: 346226. Upgrade will be run by pipx if greater than 2592000.
+ 11493.5ms (run_subprocess:168): running <checking pip's availability>
+ 11508.2ms (run_subprocess:190): stdout: ModuleSpec(name='pip', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7117d61ff260>, origin='/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip/__init__.py', submodule_search_locations=['/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip'])
+ 11508.3ms (run_subprocess:193): returncode: 0
+ 11513.4ms (cli:932): pipx finished.

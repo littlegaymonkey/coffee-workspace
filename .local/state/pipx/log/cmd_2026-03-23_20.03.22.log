@@ -1,0 +1,27 @@
+    89.6ms (setup:858): 2026-03-23 20:03:22
+    89.6ms (setup:859): /usr/bin/pipx install debug59
+    89.7ms (setup:860): pipx version is 1.4.3
+    89.7ms (setup:861): Default python interpreter is '/usr/bin/python3'
+    90.4ms (package_name_from_spec:370): Determined package name: debug59
+    90.4ms (package_name_from_spec:371): Package name determined in 0.0s
+    90.9ms (run_subprocess:168): running /usr/bin/python3 -m venv --without-pip /home/dmin/.local/share/pipx/venvs/debug59
+   152.6ms (run_subprocess:190): stdout:
+   152.7ms (run_subprocess:192): stderr:
+   152.7ms (run_subprocess:193): returncode: 0
+   153.9ms (run_subprocess:168): running <checking pip's availability>
+   173.6ms (run_subprocess:190): stdout: ModuleSpec(name='pip', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7c1310dffef0>, origin='/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip/__init__.py', submodule_search_locations=['/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip'])
+   173.7ms (run_subprocess:193): returncode: 0
+   174.7ms (run_subprocess:168): running /home/dmin/.local/share/pipx/venvs/debug59/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+   191.0ms (run_subprocess:190): stdout: /home/dmin/.local/share/pipx/venvs/debug59/lib/python3.12/site-packages
+   191.1ms (run_subprocess:193): returncode: 0
+   191.2ms (run_subprocess:168): running /home/dmin/.local/share/pipx/shared/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+   207.1ms (run_subprocess:190): stdout: /home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages
+   207.2ms (run_subprocess:193): returncode: 0
+   207.4ms (run_subprocess:168): running /home/dmin/.local/share/pipx/venvs/debug59/bin/python --version
+   208.6ms (run_subprocess:190): stdout: Python 3.12.3
+   208.7ms (run_subprocess:192): stderr:
+   208.7ms (run_subprocess:193): returncode: 0
+   208.8ms (_parsed_package_to_package_or_url:137): cleaned package spec: debug59
+   209.2ms (run_subprocess:168): running /home/dmin/.local/share/pipx/venvs/debug59/bin/python -m pip --no-input install debug59
+  1158.7ms (rmdir:55): removing directory /home/dmin/.local/share/pipx/venvs/debug59
+  1159.5ms (cli:932): pipx finished.

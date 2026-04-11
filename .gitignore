@@ -1,0 +1,9 @@
+.ssh/
+.config/
+.bash_history
+.zsh_history
+*.key
+*.pem
+# Если работаешь с C, игнорируй исполняемые файлы
+*.o
+a.out

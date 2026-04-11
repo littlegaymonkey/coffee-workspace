@@ -1,0 +1,130 @@
+{
+    "injected_packages": {},
+    "main_package": {
+        "app_paths": [
+            {
+                "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/style50",
+                "__type__": "Path"
+            },
+            {
+                "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/style50-cli",
+                "__type__": "Path"
+            }
+        ],
+        "app_paths_of_dependencies": {
+            "autopep8": [
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/autopep8",
+                    "__type__": "Path"
+                }
+            ],
+            "clang-format": [
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/clang-format",
+                    "__type__": "Path"
+                },
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/clang-format-diff.py",
+                    "__type__": "Path"
+                },
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/git-clang-format",
+                    "__type__": "Path"
+                }
+            ],
+            "cssbeautifier": [
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/css-beautify",
+                    "__type__": "Path"
+                }
+            ],
+            "djhtml": [
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/djcss",
+                    "__type__": "Path"
+                },
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/djhtml",
+                    "__type__": "Path"
+                },
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/djjs",
+                    "__type__": "Path"
+                },
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/djtxt",
+                    "__type__": "Path"
+                }
+            ],
+            "editorconfig": [
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/editorconfig",
+                    "__type__": "Path"
+                }
+            ],
+            "icdiff": [
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/git-icdiff",
+                    "__type__": "Path"
+                },
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/icdiff",
+                    "__type__": "Path"
+                }
+            ],
+            "jsbeautifier": [
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/js-beautify",
+                    "__type__": "Path"
+                }
+            ],
+            "pycodestyle": [
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/pycodestyle",
+                    "__type__": "Path"
+                }
+            ],
+            "sqlparse": [
+                {
+                    "__Path__": "/home/dmin/.local/share/pipx/venvs/style50/bin/sqlformat",
+                    "__type__": "Path"
+                }
+            ]
+        },
+        "apps": [
+            "style50",
+            "style50-cli"
+        ],
+        "apps_of_dependencies": [
+            "autopep8",
+            "pycodestyle",
+            "clang-format",
+            "clang-format-diff.py",
+            "git-clang-format",
+            "css-beautify",
+            "js-beautify",
+            "editorconfig",
+            "djcss",
+            "djhtml",
+            "djjs",
+            "djtxt",
+            "git-icdiff",
+            "icdiff",
+            "sqlformat"
+        ],
+        "include_apps": true,
+        "include_dependencies": false,
+        "man_pages": [],
+        "man_pages_of_dependencies": [],
+        "man_paths": [],
+        "man_paths_of_dependencies": {},
+        "package": "style50",
+        "package_or_url": "style50",
+        "package_version": "3.0.0",
+        "pip_args": [],
+        "suffix": ""
+    },
+    "pipx_metadata_version": "0.3",
+    "python_version": "Python 3.12.3",
+    "venv_args": []
+}

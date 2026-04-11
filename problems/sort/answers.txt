@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: the longest time on random50000.txt
+
+sort2 uses: merge sort 
+
+How do you know?: fastest
+
+sort3 uses: selection sort
+
+How do you know?: longest time on reversed50000.txt

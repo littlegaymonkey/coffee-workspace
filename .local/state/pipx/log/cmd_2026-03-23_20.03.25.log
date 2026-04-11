@@ -1,0 +1,44 @@
+    93.9ms (setup:858): 2026-03-23 20:03:25
+    94.0ms (setup:859): /usr/bin/pipx install debug50
+    94.0ms (setup:860): pipx version is 1.4.3
+    94.0ms (setup:861): Default python interpreter is '/usr/bin/python3'
+    94.8ms (package_name_from_spec:370): Determined package name: debug50
+    94.8ms (package_name_from_spec:371): Package name determined in 0.0s
+    95.3ms (run_subprocess:168): running /usr/bin/python3 -m venv --without-pip /home/dmin/.local/share/pipx/venvs/debug50
+   140.6ms (run_subprocess:190): stdout:
+   140.7ms (run_subprocess:192): stderr:
+   140.7ms (run_subprocess:193): returncode: 0
+   140.9ms (run_subprocess:168): running <checking pip's availability>
+   157.3ms (run_subprocess:190): stdout: ModuleSpec(name='pip', loader=<_frozen_importlib_external.SourceFileLoader object at 0x78e96ab03f20>, origin='/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip/__init__.py', submodule_search_locations=['/home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages/pip'])
+   157.4ms (run_subprocess:193): returncode: 0
+   157.5ms (run_subprocess:168): running /home/dmin/.local/share/pipx/venvs/debug50/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+   174.2ms (run_subprocess:190): stdout: /home/dmin/.local/share/pipx/venvs/debug50/lib/python3.12/site-packages
+   174.3ms (run_subprocess:193): returncode: 0
+   174.4ms (run_subprocess:168): running /home/dmin/.local/share/pipx/shared/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+   191.1ms (run_subprocess:190): stdout: /home/dmin/.local/share/pipx/shared/lib/python3.12/site-packages
+   191.1ms (run_subprocess:193): returncode: 0
+   191.3ms (run_subprocess:168): running /home/dmin/.local/share/pipx/venvs/debug50/bin/python --version
+   193.1ms (run_subprocess:190): stdout: Python 3.12.3
+   193.2ms (run_subprocess:192): stderr:
+   193.2ms (run_subprocess:193): returncode: 0
+   193.3ms (_parsed_package_to_package_or_url:137): cleaned package spec: debug50
+   193.8ms (run_subprocess:168): running /home/dmin/.local/share/pipx/venvs/debug50/bin/python -m pip --no-input install debug50
+  1583.1ms (run_subprocess:193): returncode: 1
+  1583.3ms (subprocess_post_check_handle_pip_error:327): '/home/dmin/.local/share/pipx/venvs/debug50/bin/python -m pip --no-input install debug50' failed
+  1583.6ms (subprocess_post_check_handle_pip_error:342): Fatal error from pip prevented installation. Full pip output in file:
+    /home/dmin/.local/state/pipx/log/cmd_2026-03-23_20.03.25_pip_errors.log
+  1584.5ms (rmdir:55): removing directory /home/dmin/.local/share/pipx/venvs/debug50
+  1585.1ms (cli:924): PipxError: Error installing debug50.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/pipx/main.py", line 921, in cli
+    return run_pipx_command(parsed_pipx_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pipx/main.py", line 219, in run_pipx_command
+    return commands.install(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pipx/commands/install.py", line 91, in install
+    venv.install_package(
+  File "/usr/lib/python3/dist-packages/pipx/venv.py", line 254, in install_package
+    raise PipxError(f"Error installing {full_package_description(package_name, package_or_url)}.")
+pipx.util.PipxError: Error installing debug50.
+  1643.0ms (cli:932): pipx finished.
