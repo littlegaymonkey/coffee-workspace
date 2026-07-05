@@ -1,11 +1,11 @@
-sort1 uses: TODO
+sort1 uses: bubble
 
-How do you know?: TODO
+How do you know?: slow at random but faster then selection on sorted
 
-sort2 uses: TODO
+sort2 uses: merge 
 
-How do you know?: TODO
+How do you know?: fastest at random and fastest at reversed and pretty fast at sorted 
 
-sort3 uses: TODO
+sort3 uses: selection
 
-How do you know?: TODO
+How do you know?: slowest at sorted
