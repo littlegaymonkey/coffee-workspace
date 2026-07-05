@@ -26,8 +26,7 @@ int main(void)
 int convert(string input)
 {
     int i = strlen(input);
-    char c = input[i - 1];
-    int a = (int) (c - '0');
+    int a = (int) (input[i - 1] - '0');
     input[i - 1] = '\0';
     if (strlen(input) == 0)
         return a;
