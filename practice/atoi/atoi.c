@@ -25,5 +25,13 @@ int main(void)
 
 int convert(string input)
 {
-    // TODO
+    int i = strlen(input);
+    char c = input[i - 1];
+    int a = (int) (c - '0');
+    input[i - 1] = '\0';
+    if (strlen(input) == 0)
+        return a;
+    else
+        return a + 10 * convert(input);
+
 }
