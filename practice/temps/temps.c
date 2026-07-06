@@ -66,9 +66,9 @@ void sort_cities(void)
     int smallest_index;
     string city_ind;
     int temp_ind;
-    for (int i = 0; i < NUM_CITIES - 1; i++)
+    for (int i = 0; i < NUM_CITIES; i++)
     {
-        for (int j = 0; j < NUM_CITIES; j++)
+        for (int j = i; j < NUM_CITIES; j++)
         {
             if ( temps[j].temp < min)
             {
@@ -78,10 +78,11 @@ void sort_cities(void)
         }  
         city_ind = temps[i].city;
         temp_ind = temps[i].temp;
-        temps[i].city = temp[smallest_index].city;
-        temps[i].city = temp[smallest_index].temp;
-        temp[smallest_index].city = city_ind;
-        temp[smallest_index].temp = temp_ind;
+        temps[i].city = temps[smallest_index].city;
+        temps[i].temp = temps[smallest_index].temp;
+        temps[smallest_index].city = city_ind;
+        temps[smallest_index].temp = temp_ind;
+        min = 1000;
     }
 
 
