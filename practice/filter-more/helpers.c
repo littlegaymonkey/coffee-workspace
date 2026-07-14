@@ -106,5 +106,68 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    // Create a Gx and Gy drid
+    int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+
+    int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+    // Create a copy of image
+    RGBTRIPLE copy[height][width];
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
+    // Loop over all pixels
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            float Gx_Red = 0, Gx_Green = 0, Gx_Blue = 0, Gy_Red = 0, Gy_Green = 0, Gy_Blue = 0;
+            int Sobel_Red = 0, Sobel_Green = 0, Sobel_Blue = 0;
+            int neib_count = 0;
+            int i_index = 0;
+            for (int neib_i = i - 1; neib_i <= i + 1; neib_i++)
+            {
+                int y_index = 0;
+                for (int neib_j = j - 1; neib_j <= j + 1; neib_j++)
+                {
+                    if (neib_i >= 0 && neib_i < height && neib_j >= 0 && neib_j < width)  
+                    {
+                        Gx_Red += copy[neib_i][neib_j].rgbtRed * Gx[i_index][y_index];
+                        Gx_Green += copy[neib_i][neib_j].rgbtGreen * Gx[i_index][y_index];
+                        Gx_Blue += copy[neib_i][neib_j].rgbtBlue * Gx[i_index][y_index];
+                        Gy_Red += copy[neib_i][neib_j].rgbtRed * Gy[i_index][y_index];
+                        Gy_Green += copy[neib_i][neib_j].rgbtGreen * Gy[i_index][y_index];
+                        Gy_Blue += copy[neib_i][neib_j].rgbtBlue * Gy[i_index][y_index];
+                        y_index++;
+                    }
+                    else
+                    {
+                        Gx_Red += 0;
+                        Gx_Green += 0;
+                        Gx_Blue += 0;
+                        Gy_Red += 0;
+                        Gy_Green += 0;
+                        Gy_Blue += 0;
+                        y_index++;
+                    }
+                }
+                i_index++;
+            }
+            Sobel_Red = round(sqrt(Gx_Red * Gx_Red + Gy_Red * Gy_Red));
+            if (Sobel_Red > 255)
+                Sobel_Red = 255;
+            Sobel_Green = round(sqrt(Gx_Green * Gx_Green + Gy_Green * Gy_Green));
+            if (Sobel_Green > 255)
+                Sobel_Green = 255;
+            Sobel_Blue = round(sqrt(Gx_Blue * Gx_Blue + Gy_Blue * Gy_Blue));
+            if (Sobel_Blue > 255)
+                Sobel_Blue = 255;
+            image[i][j].rgbtRed = Sobel_Red;
+            image[i][j].rgbtGreen = Sobel_Green;
+            image[i][j].rgbtBlue = Sobel_Blue;
+        }
+    }
 }
