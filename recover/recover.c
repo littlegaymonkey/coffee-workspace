@@ -29,9 +29,10 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, BLOCK, card) == BLOCK)
     {
         // Create JPEGs from the data
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff &&
+            (buffer[3] & 0xf0) == 0xe0)
         {
-            if(photo != NULL)
+            if (photo != NULL)
                 fclose(photo);
             sprintf(name_buffer, "%03i.jpg", index);
             photo = fopen(name_buffer, "w");
