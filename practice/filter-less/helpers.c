@@ -47,9 +47,19 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    // Loop over all pixels
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width / 2; j++)
+        {
+            // Swap pixels
+            RGBTRIPLE tmp;
+            tmp = image[i][width - j - 1];
+            image[i][width - j - 1] = image[i][j];
+            image[i][j] = tmp;
+        }
+    }
 }
-
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
