@@ -45,8 +45,8 @@ int main(int argc, char *argv[])
     bi.biHeight = -1 * bi.biHeight;
 
     // Ensure infile is (likely) a 24-bit uncompressed BMP 4.0
-    if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 ||
-        bi.biBitCount != 24 || bi.biCompression != 0)
+    if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 || bi.biBitCount != 24 ||
+        bi.biCompression != 0)
     {
         fclose(outptr);
         fclose(inptr);
@@ -59,7 +59,6 @@ int main(int argc, char *argv[])
 
     // Write outfile's BITMAPINFOHEADER
     fwrite(&bi, sizeof(BITMAPINFOHEADER), 1, outptr);
-
 
     // Determine padding for scanlines
     int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
