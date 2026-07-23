@@ -1,17 +1,23 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
 
 struct car
 {
     int year;
-    char plate[10];
+    char plate[5];
     int odometr;
     double engine;
 };
 
 int main(void)
 {
-    struct car my_car[10];
+    struct car *mycar = malloc(sizeof(struct car));
     printf("What is year? ");
-    scanf("%i", &my_car[0].year);
-    printf("year is %i\n", my_car[0].year);
+    mycar->year = 2015;
+    printf("year is %i\n", mycar->year);
+    printf("What is plate? ");
+    strcpy(mycar->plate, "CS50");
+    printf("plate is %s\n", mycar->plate);
 }
