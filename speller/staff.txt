@@ -9344,9 +9344,9 @@ eBooks
 WORDS MISSPELLED:     9339
 WORDS IN DICTIONARY:  143091
 WORDS IN TEXT:        192975
-TIME IN load:         0.02
-TIME IN check:        0.08
+TIME IN load:         0.04
+TIME IN check:        0.26
 TIME IN size:         0.00
-TIME IN unload:       0.01
-TIME IN TOTAL:        0.11
+TIME IN unload:       0.04
+TIME IN TOTAL:        0.34
 
