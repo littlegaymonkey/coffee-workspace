@@ -3,8 +3,8 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include <strings.h>
 
 #include "dictionary.h"
@@ -17,7 +17,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 277775;
 
 // Hash table
 node *table[N];
@@ -52,7 +52,12 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    int value = 0;
+    for (int i = 0; word[i] != '\0' && i < 5; i++)
+    {
+        value = value * 10 + (toupper(word[i]) - 'A');
+    }
+    return value;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -68,12 +73,12 @@ bool load(const char *dictionary)
         return false;
     }
     
-    //Buffer for word
+    // Buffer for word
     char word[LENGTH + 1];
     int index;
     
     // Loop for adding words into a array of word in memory
-    while(fscanf(d, "%45s", word) != EOF)
+    while (fscanf(d, "%45s", word) != EOF)
     {
         // Create a new node for each word
         // Allocate node for number
@@ -120,7 +125,7 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for (int i = 0 ; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         node *ptr = table[i];
         if (ptr == NULL)
