@@ -36,7 +36,7 @@ bool check(const char *word)
     // Traverse linked list, looking for the word (strcasecmp)
     while (ptr != NULL)
     {
-        if (strcasecmp(word, ptr->word))
+        if (strcasecmp(word, ptr->word) == 0)
         {
             return true;
         }
@@ -59,7 +59,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // Open dict file
-    FILE *d = fopen("dictionary", "r");
+    FILE *d = fopen(dictionary, "r");
 
     if (d == NULL)
     {
@@ -70,6 +70,7 @@ bool load(const char *dictionary)
     
     //Buffer for word
     char word[LENGTH + 1];
+    int index;
     
     // Loop for adding words into a array of word in memory
     while(fscanf(d, "%45s", word) != EOF)
@@ -86,10 +87,11 @@ bool load(const char *dictionary)
         n->next = NULL;
 
         // Hash a word to obtain a hash value
-        int index = hash(word);
+        index = hash(word);
 
         // Insert node into hash table at that location 
         // If is no words in hash index
+        words++;
         if (table[index] == NULL)
         {
             table[index] = n;
@@ -100,7 +102,6 @@ bool load(const char *dictionary)
             n->next = table[index];
             table[index] = n;
         }
-        words++;
     }
     // Finish
     fclose(d);
@@ -119,6 +120,20 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
-    return false;
+    for (int i = 0 ; i < N; i++)
+    {
+        node *ptr = table[i];
+        if (ptr == NULL)
+        {
+            continue;
+        }
+        node *tmp = ptr;
+        while (tmp != NULL)
+        {
+            ptr = ptr->next;
+            free(tmp);
+            tmp = ptr;
+        }
+    }
+    return true;
 }
