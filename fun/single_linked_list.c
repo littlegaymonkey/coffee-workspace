@@ -1,67 +1,43 @@
-#include <stdio.h>
-#include <ctype.h>
+// Print nodes in a linked list with a while loop
+
 #include <cs50.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct node
 {
     int number;
     struct node *next;
-}
-node;
+} node;
 
-void unload(node *list);
-
-int main (void)
+int main(void)
 {
+    // Memory for numbers
     node *list = NULL;
+
+    // Build list
     for (int i = 0; i < 3; i++)
     {
+        // Allocate node for number
         node *n = malloc(sizeof(node));
-        if (n == NULL)  
+        if (n == NULL)
+        {
             return 1;
-        n->number = get_int("Number ");
+        }
+        n->number = get_int("Number: ");
         n->next = NULL;
-        if (list == NULL)
-            list = n;
-        else if (n->number < list->number)
-        {
-            n->next = list;
-            list = n;
-        }
-        else
-        {
-            for (node *ptr = list; ptr != NULL; ptr = ptr->next)
-            {
-                if (ptr->next == NULL)
-                {
-                    ptr->next = n;
-                    break;
-                }
-                if (n->number < ptr->next->number)
-                {
-                    n->next = ptr->next;
-                    ptr->next = n;
-                    break;
-                }
-            }
-        }
-    }
-    for (node *ptr = list; ptr != NULL; ptr = ptr->next)
-    {
-        printf("number is %i\n", ptr->number);
-    }
-    unload(list);
-    return 0;
-}
 
-void unload (node *list)
-{
+        // Prepend node to list
+        n->next = list;
+        list = n;
+    }
+
+    // Print numbers
     node *ptr = list;
     while (ptr != NULL)
     {
-        node *next = ptr->next;
-        free(ptr);
-        ptr = next;
+        printf("%i\n", ptr->number);
+        ptr = ptr->next;
     }
+    return 0;
 }
