@@ -2,6 +2,9 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -35,19 +38,52 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
     // Open dict file
+    FILE *d = fopen("dictionary", "r");
 
-    // Read Strings from file one at a time
-
-    // Create a new node for each word
+    if (d == NULL)
+    {
+        // Print error : perror("Error opening file:");
+        printf("Unable to open small dict");
+        return false;
+    }
     
-    // Hash a word to obtain a hash value
+    //Buffer for word
+    char word[LENGTH + 1];
+    
+    // Loop for adding words into a array of word in memory
+    while(fscanf(d, "%45s", word) != EOF)
+    {
+        // Create a new node for each word
+        // Allocate node for number
+        node *n = malloc(sizeof(node));
+        if (n == NULL)
+        {
+            printf("Not enough memory for node");
+            return false;
+        }
+        strcpy(n->word, word);
+        n->next = NULL;
 
-    // Insert node into hash table at that location 
+        // Hash a word to obtain a hash value
+        int index = hash(word);
 
+        // Insert node into hash table at that location 
+        // If is no words in hash index
+        if (table[index] == NULL)
+        {
+            table[index] = n;
+        }
+        // If there a word on hash index
+        else
+        {
+            n->next = table[index];
+            table[index] = n;
+        }
+    }
     // Finish
-    return false;
+    fclose(d);
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
