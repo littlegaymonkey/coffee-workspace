@@ -1,15 +1,9 @@
-
-
 def main():
     text = input("Text: ")
     letters = letter_count(text)
-    print(letters)
     word = word_count(text)
-    print(word)
     senten = sentences_count(text)
-    print(senten)
     cl_index = round(index(letters, word, senten))
-    print(cl_index)
     if cl_index < 1:
         print("Before Grade 1")
     elif cl_index >= 16:
