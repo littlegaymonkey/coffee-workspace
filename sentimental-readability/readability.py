@@ -42,7 +42,6 @@ def index(letter, words, sentenses):
             - 0.296 * ((sentenses / words) * 100)
             - 15.8
         )
-        print(index1)
         return index1
     except ZeroDivisionError:
         return 0
