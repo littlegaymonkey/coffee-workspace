@@ -1,3 +1,22 @@
+
+
+def main():
+    text = input("Text: ")
+    letters = letter_count(text)
+    print(letters)
+    word = word_count(text)
+    print(word)
+    senten = sentences_count(text)
+    print(senten)
+    cl_index = round(index(letters, word, senten))
+    print(cl_index)
+    if cl_index < 1:
+        print("Before Grade 1")
+    elif cl_index >= 16:
+        print("Grade 16+")
+    else:
+        print(f"Grade {cl_index}")
+
 def letter_count(text_input):
     sum_total = 0
     for i in text_input:
@@ -34,23 +53,6 @@ def index(letter, words, sentenses):
     except ZeroDivisionError:
         return 0
 
-
-def main():
-    text = input("Text: ")
-    letters = letter_count(text)
-    print(letters)
-    word = word_count(text)
-    print(word)
-    senten = sentences_count(text)
-    print(senten)
-    cl_index = round(index(letters, word, senten))
-    print(cl_index)
-    if cl_index < 1:
-        print("Before Grade 1")
-    elif cl_index >= 16:
-        print("Grade 16+")
-    else:
-        print(f"Grade {cl_index}")
 
 
 if __name__ == "__main__":
