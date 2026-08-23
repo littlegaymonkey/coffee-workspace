@@ -4,11 +4,11 @@ import sys
 
 def main():
 
-    # TODO: Check for command-line usage
+    # : Check for command-line usage
     if len(sys.argv) != 3:
         print("Missing command-line argument")
         sys.exit(1)
-    # TODO: Read database file into a variable
+    # : Read database file into a variable
     try:
         rows = []
         with open(sys.argv[1]) as data:
@@ -18,14 +18,14 @@ def main():
     except FileNotFoundError:
         print("No such .csv file in directoty or file is corrupted.")
         sys.exit(1)
-    # TODO: Read DNA sequence file into a variable
+    # : Read DNA sequence file into a variable
     try:
         d = open(sys.argv[2])
         dna = d.read()
     except FileNotFoundError:
         print("No such .txt file in directoty or file is corrupted.")
         sys.exit(1)
-    # TODO: Find longest match of each STR in DNA sequence
+    # : Find longest match of each STR in DNA sequence
     with open(sys.argv[1]) as data:
         reader = csv.reader(data)
         headers = next(reader)
@@ -35,7 +35,7 @@ def main():
             run = longest_match(dna, header)
             dnas.append(run)
 
-    # TODO: Check database for matching profiles
+    # : Check database for matching profiles
 
     for i in range(len(rows)):
         pow = list(rows[i].values())
