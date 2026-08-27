@@ -13,7 +13,6 @@ def main():
 
     # Construct 14 day lists of new cases for each states
     new_cases = calculate(reader)
-
     # Create a list to store selected states
     states = []
     print("Choose one or more states to view average COVID cases.")
@@ -25,7 +24,6 @@ def main():
             states.append(state)
         if len(state) == 0:
             break
-
     print(f"\nSeven-Day Averages")
 
     # Print out 7-day averages for this week vs last week
@@ -34,12 +32,39 @@ def main():
 
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
-    ...
+    states = {}
+    previos = {}
+    for row in reader:
+        state = row["state"]
+        curent = int(row["cases"])
+
+        if state not in states:
+            states[state] = []
+            states[state].append(curent)
+        else:
+            new = curent - previos[state]
+            states[state].append(new)
+        previos[state] = curent
+    return states
 
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
-    ...
+    for state in states:
+        first_7 = sum(new_cases[state][-14:-7]) / 7
+        last_7 = sum(new_cases[state][-7:]) / 7
+        try:
+            proc = ((first_7 - last_7) / first_7) * 100
+        except ZeroDivisionError:
+            break
+        if first_7 > last_7:
+            print(
+                f"{state} had a 7-day average of {round(last_7)} and an dicrease of {round(proc)}%."
+            )
+        elif last_7 > first_7:
+            print(
+                f"{state} had a 7-day average of {round(last_7)} and an increase of {round(proc)}%."
+            )
 
 
 main()
